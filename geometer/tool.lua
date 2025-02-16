@@ -5,6 +5,7 @@ local Tool = prism.Object:extend("Tool")
 
 ---Updates the tool state.
 ---@param dt number The time delta since the last update.
+---@param editor Editor The editor instance.
 function Tool:update(dt, editor)
    -- Update logic.
 end

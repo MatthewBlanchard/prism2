@@ -2,24 +2,24 @@
 --- @field placeable Placeable
 --- @field placed Placeable[]|nil
 --- @field replaced SparseGrid
---- @field topleft Vector2
---- @field bottomright Vector2
+--- @field topLeft Vector2
+--- @field bottomRight Vector2
 local RectModification = geometer.Modification:extend "RectModification"
 
 ---@param placeable Placeable
----@param topleft Vector2
----@param bottomright Vector2
-function RectModification:__new(placeable, topleft, bottomright, fillMode)
+---@param topLeft Vector2
+---@param bottomRight Vector2
+function RectModification:__new(placeable, topLeft, bottomRight, fillMode)
    self.placeable = placeable
-   self.topleft = topleft
-   self.bottomright = bottomright
+   self.topLeft = topLeft
+   self.bottomRight = bottomRight
    self.fillMode = fillMode
 end
 
 --- @param attachable SpectrumAttachable
 function RectModification:execute(attachable)
-   local i, j = self.topleft.x, self.topleft.y
-   local k, l = self.bottomright.x, self.bottomright.y
+   local i, j = self.topLeft.x, self.topLeft.y
+   local k, l = self.bottomRight.x, self.bottomRight.y
 
    if self.fillMode then
       -- Fill the rectangle

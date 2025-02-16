@@ -7,6 +7,7 @@ local Button = geometer.require "elements.button"
 ---@field editor Editor
 
 ---@class Tools : Inky.Element
+---@field props ToolsProps
 
 ---@param self Tools
 ---@param scene Inky.Scene

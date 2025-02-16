@@ -134,7 +134,12 @@ function Editor:keypressed(key, scancode)
    pointer:raise("keypressed", key)
    if not self.keybindsEnabled then return end
 
-   local action = keybinds:keypressed(key)
+   local mode
+   if love.keyboard.isDown("lctrl") or love.keyboard.isDown("rctrl") then
+      mode = "ctrl"
+   end
+
+   local action = keybinds:keypressed(key, mode)
    if action then scene:raise(action, pointer) end
    if action == "undo" then
       self:undo()
@@ -145,6 +150,10 @@ function Editor:keypressed(key, scancode)
       scene:raise("fillMode", self.fillMode)
    elseif action == "mode" then
       self.selectorMode = self.selectorModes[self.selectorMode]
+   elseif action == "copy" then
+      if self.tool.copy then self.tool:copy(self.attachable) end
+   elseif action == "paste" then
+      if self.tool.paste then self.tool:paste(self.attachable) end
    end
 end
 
