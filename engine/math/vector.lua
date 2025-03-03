@@ -228,7 +228,7 @@ Vector2.neighborhood4 = {
    Vector2.UP,
    Vector2.DOWN,
    Vector2.RIGHT,
-   Vector2.DOWN
+   Vector2.LEFT
 }
 
 return Vector2
