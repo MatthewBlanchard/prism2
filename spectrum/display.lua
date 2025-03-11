@@ -57,6 +57,8 @@ function Display:draw()
    love.graphics.pop()
 end
 
+---@param primary SensesComponent[] List of primary senses.
+---@param secondary SensesComponent[] List of secondary senses.
 function Display.buildSenseInfo(primary, secondary)
    local primaryCellSet = prism.SparseGrid()
    local secondaryCellSet = prism.SparseGrid()

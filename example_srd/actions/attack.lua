@@ -35,7 +35,7 @@ end
 ---@class AttackAction : SRDAction
 ---@field name string
 ---@field silent boolean
----@field targets table<Target>
+---@field targets Target[]
 local Attack = SRDAction:extend("AttackAction")
 Attack.name = "attack"
 Attack.targets = { AttackDataTarget, AttackTarget }

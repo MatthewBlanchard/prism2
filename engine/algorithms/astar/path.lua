@@ -1,15 +1,15 @@
 --- A class to represent the A* path and its cost
 ---@class Path : Object
----@field path table<Vector2> -- The path as an ordered list of Vector2 nodes
+---@field path Vector2[] -- The path as an ordered list of Vector2 nodes
 ---@field cost number -- The total cost to traverse the path
----@field private costIndex table<integer>
----@overload fun(path: table<Vector2>, costIndex: table<integer>): Path
+---@field private costIndex integer[]
+---@overload fun(path: Vector2[], costIndex: integer[]): Path
 local Path = prism.Object:extend("Path")
 Path.__index = Path
 
 --- Constructor for the Path class
----@param path table<Vector2>
----@param costIndex table<integer>
+---@param path Vector2[]
+---@param costIndex integer[]
 ---@return Path
 function Path:__new(path, costIndex)
    self.path = path
@@ -34,7 +34,7 @@ function Path:getTotalCost()
 end
 
 --- Get the path as a table of nodes
----@return table<Vector2>
+---@return Vector2[]
 function Path:getPath()
    return self.path
 end

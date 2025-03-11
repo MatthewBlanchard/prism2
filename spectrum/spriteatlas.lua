@@ -10,7 +10,7 @@ local SpriteAtlas = prism.Object:extend("SpriteAtlas")
 --- The constructor for the SpriteAtlas class
 --- @param imagePath string The path to the texture atlas image
 --- @param spriteData table A table containing sprite names and their respective quads
---- @param names table<string>
+--- @param names string[]
 function SpriteAtlas:__new(imagePath, spriteData, names)
    self.image = love.graphics.newImage(imagePath)
    self.quadsByName = {}

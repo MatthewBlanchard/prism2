@@ -8,7 +8,7 @@
 --- @field source Actor? An object granting the owner of the action this action. A wand's zap action is a good example.
 --- @field targets [Target]
 --- @field targetObjects [Object]
---- @overload fun(owner: Actor, targets: table<Target>): Action
+--- @overload fun(owner: Actor, targets: Target[]): Action
 --- @type Action
 local Action = prism.Object:extend("Action")
 Action.time = 100

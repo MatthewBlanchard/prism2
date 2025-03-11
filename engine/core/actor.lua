@@ -6,7 +6,7 @@
 --- @field private position Vector2 An actor's position in the game world.
 --- @field name string The string name of the actor, used for display to the user.
 --- @field char string The character to draw for this actor.
---- @field components table<Component> A table containing all of the actor's component instances. Generated at runtime.
+--- @field components Component[] A table containing all of the actor's component instances. Generated at runtime.
 --- @field componentCache table This is a cache for component queries, reducing most queries to a hashmap lookup.
 --- @overload fun(): Actor
 --- @type Actor
@@ -36,7 +36,7 @@ end
 --
 
 --- Creates the components for the actor. Override this.
---- @return table<Component>
+--- @return Component[]
 function Actor:initialize()
    return {}
 end
@@ -127,7 +127,7 @@ function Actor:getAction(prototype)
 end
 
 --- Get a list of actions from the actor and all of its components.
---- @return table<Action> totalActions Returns a table of all actions.
+--- @return Action[] totalActions Returns a table of all actions.
 function Actor:getActions()
    local totalActions = {}
 

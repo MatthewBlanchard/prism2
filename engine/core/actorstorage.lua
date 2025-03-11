@@ -135,9 +135,10 @@ end
 
 --- Returns a table of actors in the storage at the given position.
 --- TODO: Return an ActorStorage object instead of a table.
+---
 --- @param x number The x-coordinate to check.
 --- @param y number The y-coordinate to check.
---- @return table<Actor> actors A table of actors at the given position.
+--- @return Actor[] actors A table of actors at the given position.
 function ActorStorage:getActorsAt(x, y)
    local actorsAtPosition = {}
    for actor, _ in pairs(self.sparseMap:get(x, y)) do

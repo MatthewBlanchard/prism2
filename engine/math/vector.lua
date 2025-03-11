@@ -209,7 +209,7 @@ Vector2.DOWN_RIGHT = Vector2(1, 1)
 ---@type Vector2
 Vector2.DOWN_LEFT = Vector2(-1, 1)
 
---- @alias Neighborhood table<Vector2>
+--- @alias Neighborhood Vector2[]
 
 --- @type Neighborhood
 Vector2.neighborhood8 = {

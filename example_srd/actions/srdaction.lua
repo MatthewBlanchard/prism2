@@ -1,7 +1,7 @@
 ---@class SRDAction : Action
 ---@field name string
 ---@field silent boolean
----@field targets table<Target>
+---@field targets Target[]
 local SRDAction = prism.Action:extend("SRDAction")
 SRDAction.name = "SRDAction"
 SRDAction.silent = true

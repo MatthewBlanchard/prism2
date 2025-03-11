@@ -4,7 +4,7 @@ local SRDAction = require "example_srd.actions.srdaction"
 ---@class EndTurnAction : SRDAction
 ---@field name string
 ---@field silent boolean
----@field targets table<Target>
+---@field targets Target[]
 local EndTurn = SRDAction:extend("EndTurnAction")
 EndTurn.name = "end turn"
 EndTurn.silent = true
