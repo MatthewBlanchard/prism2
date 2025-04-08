@@ -46,7 +46,7 @@ local scene
 ---@type Inky.Pointer
 local pointer
 
-local scaler = math.floor(math.min(love.graphics.getWidth() / 320, love.graphics.getHeight() / 200))
+local scaler = math.floor(math.min(love.graphics.getWidth() / 348, love.graphics.getHeight() / 200))
 local scale = prism.Vector2(scaler, scaler)
 
 function Editor:isActive()
@@ -66,7 +66,7 @@ function Editor:startEditing()
    self.undoStack = {}
    self.redoStack = {}
 
-   self.tool = getmetatable(self.tool)()
+   self.tool = PenTool()
 
    self.attachable.debug = false
    love.keyboard.setKeyRepeat(true)
