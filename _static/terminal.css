@@ -8,7 +8,7 @@
   --page-width: 60em;
   --font-color: #151515;
   --invert-font-color: #fff;
-  --primary-color: #8ac4c3;
+  --primary-color: #2789cd;
   --secondary-color: #727578;
   --error-color: #d20962;
   --progress-bar-background: #727578;
@@ -189,7 +189,7 @@ code {
 
 code::after,
 code::before {
-  content: "`";
+  content: " ";
   display: inline;
 }
 

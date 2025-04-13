@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Getting Started with LÖVE &#8212; Prism  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
     <link rel="stylesheet" type="text/css" href="../_static/lua.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/terminal.css?v=323cbb1e" />
+    <link rel="stylesheet" type="text/css" href="../_static/terminal.css?v=927f5bf9" />
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -78,35 +78,35 @@ the template.</p>
 <li><p>Create a new file named <code class="docutils literal notranslate"><span class="pre">kobold.lua</span></code>.</p></li>
 <li><p>Add the following code to define the Kobold actor:</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">--- @class Kobold : Actor</span>
-<span class="kd">local</span> <span class="n">Kobold</span> <span class="o">=</span> <span class="n">prism</span><span class="p">.</span><span class="n">Actor</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;Kobold&quot;</span><span class="p">)</span>
-<span class="n">Kobold</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Kobold&quot;</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">Kobold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">Actor</span><span class="p">:</span><span class="nf">extend</span><span class="p">(</span><span class="s2">&quot;Kobold&quot;</span><span class="p">)</span>
+<span class="nv">Kobold</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Kobold&quot;</span>
 
-<span class="kr">function</span> <span class="nc">Kobold</span><span class="p">:</span><span class="nf">initialize</span><span class="p">()</span>
-    <span class="n">love</span><span class="p">.</span><span class="n">graphics</span><span class="p">.</span><span class="n">rectangle</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
-  <span class="kr">return</span> <span class="p">{</span>
-    <span class="c1">-- Defines the drawable appearance of the Kobold.</span>
-    <span class="c1">-- Each index corresponds to a character byte + 1 in the spritesheet.</span>
-    <span class="c1">-- The second argument specifies the Kobold&#39;s color (red).</span>
-    <span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Drawable</span><span class="p">(</span><span class="nb">string.byte</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">prism</span><span class="p">.</span><span class="n">Color4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+<span class="kr">function</span><span class="w"> </span><span class="nc">Kobold</span><span class="p">:</span><span class="nf">initialize</span><span class="p">()</span>
+<span class="w">    </span><span class="nv">love</span><span class="p">.</span><span class="py">graphics</span><span class="p">.</span><span class="nf">rectangle</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nv">width</span><span class="p">,</span><span class="w"> </span><span class="nv">height</span><span class="p">)</span>
+<span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">-- Defines the drawable appearance of the Kobold.</span>
+<span class="w">    </span><span class="c1">-- Each index corresponds to a character byte + 1 in the spritesheet.</span>
+<span class="w">    </span><span class="c1">-- The second argument specifies the Kobold&#39;s color (red).</span>
+<span class="w">    </span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="nf">Drawable</span><span class="p">(</span><span class="nb">string.byte</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="nf">Color4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)),</span>
 
-    <span class="c1">-- Collider component ensures the Kobold occupies space on the map.</span>
-    <span class="c1">-- Custom movement types can be specified for pathing exceptions.</span>
-    <span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Collider</span><span class="p">(),</span>
+<span class="w">    </span><span class="c1">-- Collider component ensures the Kobold occupies space on the map.</span>
+<span class="w">    </span><span class="c1">-- Custom movement types can be specified for pathing exceptions.</span>
+<span class="w">    </span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="nf">Collider</span><span class="p">(),</span>
 
-    <span class="c1">-- Senses component acts as a hub for implementing perception mechanics,</span>
-    <span class="c1">-- such as Sight, Tremorsense, or Sound awareness.</span>
-    <span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Senses</span><span class="p">(),</span>
+<span class="w">    </span><span class="c1">-- Senses component acts as a hub for implementing perception mechanics,</span>
+<span class="w">    </span><span class="c1">-- such as Sight, Tremorsense, or Sound awareness.</span>
+<span class="w">    </span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="nf">Senses</span><span class="p">(),</span>
 
-    <span class="c1">-- Sight component provides the Kobold with a field of vision.</span>
-    <span class="c1">-- Defined in `modules/Sight` and included in the template.</span>
-    <span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Sight</span><span class="p">{</span> <span class="n">range</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">fov</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">},</span>
+<span class="w">    </span><span class="c1">-- Sight component provides the Kobold with a field of vision.</span>
+<span class="w">    </span><span class="c1">-- Defined in `modules/Sight` and included in the template.</span>
+<span class="w">    </span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Sight</span><span class="p">{</span><span class="w"> </span><span class="nv">range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nv">fov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
 
-    <span class="c1">-- Move component enables movement actions, restricted to specified movement types.</span>
-    <span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Mover</span><span class="p">{</span> <span class="s2">&quot;walk&quot;</span> <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">    </span><span class="c1">-- Move component enables movement actions, restricted to specified movement types.</span>
+<span class="w">    </span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Mover</span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;walk&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="kr">end</span>
 
-<span class="kr">return</span> <span class="n">Kobold</span>
+<span class="kr">return</span><span class="w"> </span><span class="nv">Kobold</span>
 </pre></div>
 </div>
 </li>
@@ -137,51 +137,51 @@ modify the level directly</strong>—it should only use it to validate actions.<
 <span class="c1">--- @field blackboard table|nil</span>
 <span class="c1">--- @overload fun(): KoboldController</span>
 <span class="c1">--- @type KoboldController</span>
-<span class="kd">local</span> <span class="n">KoboldController</span> <span class="o">=</span> <span class="n">prism</span><span class="p">.</span><span class="n">Controller</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;KoboldController&quot;</span><span class="p">)</span>
-<span class="n">KoboldController</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;KoboldController&quot;</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">KoboldController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">Controller</span><span class="p">:</span><span class="nf">extend</span><span class="p">(</span><span class="s2">&quot;KoboldController&quot;</span><span class="p">)</span>
+<span class="nv">KoboldController</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;KoboldController&quot;</span>
 
 <span class="c1">---@return Action</span>
-<span class="kr">function</span> <span class="nc">KoboldController</span><span class="p">:</span><span class="nf">act</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">actor</span><span class="p">)</span>
-    <span class="c1">-- Retrieve the senses component to detect nearby actors.</span>
-    <span class="kd">local</span> <span class="n">senses</span> <span class="o">=</span> <span class="n">self</span><span class="p">:</span><span class="n">getComponent</span><span class="p">(</span><span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Senses</span><span class="p">)</span>
+<span class="kr">function</span><span class="w"> </span><span class="nc">KoboldController</span><span class="p">:</span><span class="nf">act</span><span class="p">(</span><span class="nv">level</span><span class="p">,</span><span class="w"> </span><span class="nv">actor</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">-- Retrieve the senses component to detect nearby actors.</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">senses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">self</span><span class="p">:</span><span class="nf">getComponent</span><span class="p">(</span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Senses</span><span class="p">)</span>
 
-    <span class="c1">-- Identify the closest sensed actor that has a Controller.</span>
-    <span class="kd">local</span> <span class="n">closest</span>
-    <span class="kd">local</span> <span class="n">closestDistance</span>
-    <span class="kr">for</span> <span class="n">sensedActor</span> <span class="kr">in</span> <span class="n">senses</span><span class="p">.</span><span class="n">actors</span><span class="p">:</span><span class="n">eachActor</span><span class="p">(</span><span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Controller</span><span class="p">)</span> <span class="kr">do</span>
-        <span class="kd">local</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">sensedActor</span><span class="p">:</span><span class="n">getRange</span><span class="p">(</span><span class="n">actor</span><span class="p">)</span>
-        <span class="kr">if</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="n">closestDistance</span> <span class="kr">then</span>
-            <span class="n">closest</span> <span class="o">=</span> <span class="n">sensedActor</span>
-            <span class="n">closestDistance</span> <span class="o">=</span> <span class="n">dist</span>
-        <span class="kr">end</span>
-    <span class="kr">end</span>
+<span class="w">    </span><span class="c1">-- Identify the closest sensed actor that has a Controller.</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">closest</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">closestDistance</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">sensedActor</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">senses</span><span class="p">.</span><span class="py">actors</span><span class="p">:</span><span class="nf">eachActor</span><span class="p">(</span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Controller</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sensedActor</span><span class="p">:</span><span class="nf">getRange</span><span class="p">(</span><span class="nv">actor</span><span class="p">)</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">dist</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">closestDistance</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="nv">closest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sensedActor</span>
+<span class="w">            </span><span class="nv">closestDistance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">dist</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
 
-    <span class="c1">-- If no valid target is found, wait.</span>
-    <span class="kr">if</span> <span class="ow">not</span> <span class="n">closest</span> <span class="kr">then</span> <span class="kr">return</span> <span class="n">prism</span><span class="p">.</span><span class="n">actions</span><span class="p">.</span><span class="n">Wait</span><span class="p">()</span> <span class="kr">end</span>
+<span class="w">    </span><span class="c1">-- If no valid target is found, wait.</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">closest</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">actions</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span><span class="w"> </span><span class="kr">end</span>
 
-    <span class="c1">-- Use Prism&#39;s pathfinding to determine a route to the closest actor.</span>
-    <span class="kd">local</span> <span class="n">path</span> <span class="o">=</span> <span class="n">level</span><span class="p">:</span><span class="n">findPath</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="n">getPosition</span><span class="p">(),</span> <span class="n">closest</span><span class="p">:</span><span class="n">getPosition</span><span class="p">(),</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">stats</span><span class="p">.</span><span class="n">mask</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">-- Use Prism&#39;s pathfinding to determine a route to the closest actor.</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">level</span><span class="p">:</span><span class="nf">findPath</span><span class="p">(</span><span class="nv">actor</span><span class="p">:</span><span class="nf">getPosition</span><span class="p">(),</span><span class="w"> </span><span class="nv">closest</span><span class="p">:</span><span class="nf">getPosition</span><span class="p">(),</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nv">stats</span><span class="p">.</span><span class="py">mask</span><span class="p">)</span>
 
-    <span class="c1">-- If a valid path is found, attempt to move along it.</span>
-    <span class="kr">if</span> <span class="n">path</span> <span class="kr">then</span>
-        <span class="kd">local</span> <span class="n">move</span> <span class="o">=</span> <span class="n">prism</span><span class="p">.</span><span class="n">actions</span><span class="p">.</span><span class="n">Move</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span><span class="n">pop</span><span class="p">()})</span>
-        <span class="kr">if</span> <span class="n">move</span><span class="p">:</span><span class="n">canPerform</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="kr">then</span>
-            <span class="kr">return</span> <span class="n">move</span>
-        <span class="kr">end</span>
-    <span class="kr">end</span>
+<span class="w">    </span><span class="c1">-- If a valid path is found, attempt to move along it.</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">path</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">move</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">actions</span><span class="p">.</span><span class="nf">Move</span><span class="p">(</span><span class="nv">actor</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nv">path</span><span class="p">:</span><span class="nf">pop</span><span class="p">()})</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">move</span><span class="p">:</span><span class="nf">canPerform</span><span class="p">(</span><span class="nv">level</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="kr">return</span><span class="w"> </span><span class="nv">move</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
 
-    <span class="c1">-- If no action can be taken, wait.</span>
-    <span class="kr">return</span> <span class="n">prism</span><span class="p">.</span><span class="n">actions</span><span class="p">.</span><span class="n">Wait</span><span class="p">()</span>
+<span class="w">    </span><span class="c1">-- If no action can be taken, wait.</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">actions</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
 <span class="kr">end</span>
 
-<span class="kr">return</span> <span class="n">KoboldController</span>
+<span class="kr">return</span><span class="w"> </span><span class="nv">KoboldController</span>
 </pre></div>
 </div>
 </section>
 <section id="integrating-the-controller">
 <h3>Integrating the Controller<a class="headerlink" href="#integrating-the-controller" title="Link to this heading">¶</a></h3>
 <p>Now, open <code class="docutils literal notranslate"><span class="pre">kobold.lua</span></code> and add the new component:</p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">KoboldController</span><span class="p">()</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="nf">KoboldController</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
@@ -212,8 +212,8 @@ we’ll use a <strong>simple tag component</strong>.</p>
 <li><p>Create a new file named <code class="docutils literal notranslate"><span class="pre">player.lua</span></code>.</p></li>
 <li><p>Add the following code:</p></li>
 </ol>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">PlayerTag</span> <span class="o">=</span> <span class="n">prism</span><span class="p">.</span><span class="n">Component</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;PlayerTagComponent&quot;</span><span class="p">)</span>
-<span class="n">PlayerTag</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;PlayerTag&quot;</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span><span class="w"> </span><span class="nv">PlayerTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">Component</span><span class="p">:</span><span class="nf">extend</span><span class="p">(</span><span class="s2">&quot;PlayerTagComponent&quot;</span><span class="p">)</span>
+<span class="nv">PlayerTag</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;PlayerTag&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -221,7 +221,7 @@ we’ll use a <strong>simple tag component</strong>.</p>
 <h3>Assigning the PlayerTag<a class="headerlink" href="#assigning-the-playertag" title="Link to this heading">¶</a></h3>
 <p>Next, modify <code class="docutils literal notranslate"><span class="pre">modules/MyGame/actors/player.lua</span></code> to add the new
 component:</p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">PlayerTag</span><span class="p">()</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="nf">PlayerTag</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
@@ -233,31 +233,31 @@ component:</p>
 with the <strong>PlayerTag</strong>.</p>
 <p>Replace the <code class="docutils literal notranslate"><span class="pre">act</span></code> function in <code class="docutils literal notranslate"><span class="pre">koboldcontroller.lua</span></code> with the
 following:</p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span> <span class="nc">KoboldController</span><span class="p">:</span><span class="nf">act</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">actor</span><span class="p">)</span>
-    <span class="c1">-- Retrieve the senses component to detect nearby actors.</span>
-    <span class="kd">local</span> <span class="n">senses</span> <span class="o">=</span> <span class="n">self</span><span class="p">:</span><span class="n">getComponent</span><span class="p">(</span><span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Senses</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">KoboldController</span><span class="p">:</span><span class="nf">act</span><span class="p">(</span><span class="nv">level</span><span class="p">,</span><span class="w"> </span><span class="nv">actor</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">-- Retrieve the senses component to detect nearby actors.</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">senses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">self</span><span class="p">:</span><span class="nf">getComponent</span><span class="p">(</span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Senses</span><span class="p">)</span>
 
-    <span class="c1">-- Identify the player from sensed actors.</span>
-    <span class="kd">local</span> <span class="n">player</span>
-    <span class="kr">for</span> <span class="n">sensedActor</span> <span class="kr">in</span> <span class="n">senses</span><span class="p">.</span><span class="n">actors</span><span class="p">:</span><span class="n">eachActor</span><span class="p">(</span><span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Player</span><span class="p">)</span> <span class="kr">do</span>
-        <span class="n">player</span> <span class="o">=</span> <span class="n">sensedActor</span>
-    <span class="kr">end</span>
+<span class="w">    </span><span class="c1">-- Identify the player from sensed actors.</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">player</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">sensedActor</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">senses</span><span class="p">.</span><span class="py">actors</span><span class="p">:</span><span class="nf">eachActor</span><span class="p">(</span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Player</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">        </span><span class="nv">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sensedActor</span>
+<span class="w">    </span><span class="kr">end</span>
 
-    <span class="kr">if</span> <span class="n">player</span> <span class="kr">then</span>
-        <span class="c1">-- Use Prism&#39;s pathfinding to determine a route to the player.</span>
-        <span class="kd">local</span> <span class="n">path</span> <span class="o">=</span> <span class="n">level</span><span class="p">:</span><span class="n">findPath</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="n">getPosition</span><span class="p">(),</span> <span class="n">player</span><span class="p">:</span><span class="n">getPosition</span><span class="p">(),</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">stats</span><span class="p">.</span><span class="n">mask</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="c1">-- Use Prism&#39;s pathfinding to determine a route to the player.</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">level</span><span class="p">:</span><span class="nf">findPath</span><span class="p">(</span><span class="nv">actor</span><span class="p">:</span><span class="nf">getPosition</span><span class="p">(),</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getPosition</span><span class="p">(),</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nv">stats</span><span class="p">.</span><span class="py">mask</span><span class="p">)</span>
 
-        <span class="c1">-- If a valid path is found, attempt to move along it.</span>
-        <span class="kr">if</span> <span class="n">path</span> <span class="kr">then</span>
-            <span class="kd">local</span> <span class="n">move</span> <span class="o">=</span> <span class="n">prism</span><span class="p">.</span><span class="n">actions</span><span class="p">.</span><span class="n">Move</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span><span class="n">pop</span><span class="p">()})</span>
-            <span class="kr">if</span> <span class="n">move</span><span class="p">:</span><span class="n">canPerform</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="kr">then</span>
-                <span class="kr">return</span> <span class="n">move</span>
-            <span class="kr">end</span>
-        <span class="kr">end</span>
-    <span class="kr">end</span>
+<span class="w">        </span><span class="c1">-- If a valid path is found, attempt to move along it.</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">path</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="kd">local</span><span class="w"> </span><span class="nv">move</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">actions</span><span class="p">.</span><span class="nf">Move</span><span class="p">(</span><span class="nv">actor</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nv">path</span><span class="p">:</span><span class="nf">pop</span><span class="p">()})</span>
+<span class="w">            </span><span class="kr">if</span><span class="w"> </span><span class="nv">move</span><span class="p">:</span><span class="nf">canPerform</span><span class="p">(</span><span class="nv">level</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">                </span><span class="kr">return</span><span class="w"> </span><span class="nv">move</span>
+<span class="w">            </span><span class="kr">end</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
 
-    <span class="c1">-- If no action can be taken, wait.</span>
-    <span class="kr">return</span> <span class="n">prism</span><span class="p">.</span><span class="n">actions</span><span class="p">.</span><span class="n">Wait</span><span class="p">()</span>
+<span class="w">    </span><span class="c1">-- If no action can be taken, wait.</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">actions</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
 <span class="kr">end</span>
 </pre></div>
 </div>
@@ -270,16 +270,16 @@ them! We’ll need to create our first action. Head over to
 /modules/MyGame/actions and add kick.lua.</p>
 <p>Let’s first create a target for our kick. Put this at the top of
 kick.lua.</p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">KickTarget</span> <span class="o">=</span> <span class="n">prism</span><span class="p">.</span><span class="n">Target</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;KickTarget&quot;</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kd">local</span><span class="w"> </span><span class="nv">KickTarget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">Target</span><span class="p">:</span><span class="nf">extend</span><span class="p">(</span><span class="s2">&quot;KickTarget&quot;</span><span class="p">)</span>
 <span class="c1">-- This can be Actor, Point, Cell, or Any. You can accept a union of these types and</span>
 <span class="c1">-- differentiate in canPerform/perform</span>
-<span class="n">KickTarget</span><span class="p">.</span><span class="n">typesAllowed</span> <span class="o">=</span> <span class="p">{</span> <span class="n">Actor</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span>
+<span class="nv">KickTarget</span><span class="p">.</span><span class="py">typesAllowed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">Actor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
 <span class="c1">-- Targets have built in range checking for brevity, we specify one here.</span>
-<span class="n">KickTarget</span><span class="p">.</span><span class="n">range</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nv">KickTarget</span><span class="p">.</span><span class="py">range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
 
-<span class="kr">function</span> <span class="nc">KickTarget</span><span class="p">:</span><span class="nf">validate</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span> <span class="n">actor</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
-   <span class="c1">-- check if the actor has a collider</span>
-   <span class="kr">return</span> <span class="n">actor</span><span class="p">:</span><span class="n">hasComponent</span><span class="p">(</span><span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Collider</span><span class="p">)</span>
+<span class="kr">function</span><span class="w"> </span><span class="nc">KickTarget</span><span class="p">:</span><span class="nf">validate</span><span class="p">(</span><span class="nv">owner</span><span class="p">,</span><span class="w"> </span><span class="nv">actor</span><span class="p">,</span><span class="w"> </span><span class="nv">targets</span><span class="p">)</span>
+<span class="w">   </span><span class="c1">-- check if the actor has a collider</span>
+<span class="w">   </span><span class="kr">return</span><span class="w"> </span><span class="nv">actor</span><span class="p">:</span><span class="nf">hasComponent</span><span class="p">(</span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Collider</span><span class="p">)</span>
 <span class="kr">end</span>
 </pre></div>
 </div>
@@ -289,42 +289,42 @@ with a collider component.</p>
 <span class="c1">---@field name string</span>
 <span class="c1">---@field targets Target[]</span>
 <span class="c1">---@field previousPosition Vector2</span>
-<span class="kd">local</span> <span class="n">Kick</span> <span class="o">=</span> <span class="n">prism</span><span class="p">.</span><span class="n">Action</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;KickAction&quot;</span><span class="p">)</span>
-<span class="n">Kick</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;move&quot;</span>
-<span class="n">Kick</span><span class="p">.</span><span class="n">targets</span> <span class="o">=</span> <span class="p">{</span> <span class="n">KickTarget</span> <span class="p">}</span>
-<span class="n">Kick</span><span class="p">.</span><span class="n">requiredComponents</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Controller</span><span class="p">,</span>
-   <span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Kicker</span><span class="p">,</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">Kick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">Action</span><span class="p">:</span><span class="nf">extend</span><span class="p">(</span><span class="s2">&quot;KickAction&quot;</span><span class="p">)</span>
+<span class="nv">Kick</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;move&quot;</span>
+<span class="nv">Kick</span><span class="p">.</span><span class="py">targets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">KickTarget</span><span class="w"> </span><span class="p">}</span>
+<span class="nv">Kick</span><span class="p">.</span><span class="py">requiredComponents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Controller</span><span class="p">,</span>
+<span class="w">   </span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Kicker</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="c1">--- @param level Level</span>
 <span class="c1">--- @param kicked Actor</span>
-<span class="kr">function</span> <span class="nc">Kick</span><span class="p">:</span><span class="nf">_perform</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">kicked</span><span class="p">)</span>
-   <span class="kd">local</span> <span class="n">kicker</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">owner</span><span class="p">:</span><span class="n">expectComponent</span><span class="p">(</span><span class="n">prism</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="n">Kicker</span><span class="p">)</span>
+<span class="kr">function</span><span class="w"> </span><span class="nc">Kick</span><span class="p">:</span><span class="nf">_perform</span><span class="p">(</span><span class="nv">level</span><span class="p">,</span><span class="w"> </span><span class="nv">kicked</span><span class="p">)</span>
+<span class="w">   </span><span class="kd">local</span><span class="w"> </span><span class="nv">kicker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">self</span><span class="p">.</span><span class="py">owner</span><span class="p">:</span><span class="nf">expectComponent</span><span class="p">(</span><span class="nv">prism</span><span class="p">.</span><span class="py">components</span><span class="p">.</span><span class="py">Kicker</span><span class="p">)</span>
 
-   <span class="kd">local</span> <span class="n">kx</span><span class="p">,</span> <span class="n">ky</span> <span class="o">=</span> <span class="p">(</span><span class="n">kicked</span><span class="p">:</span><span class="n">getPosition</span><span class="p">()</span> <span class="o">-</span> <span class="n">self</span><span class="p">.</span><span class="n">owner</span><span class="p">:</span><span class="n">getPosition</span><span class="p">()):</span><span class="n">decompose</span><span class="p">()</span>
+<span class="w">   </span><span class="kd">local</span><span class="w"> </span><span class="nv">kx</span><span class="p">,</span><span class="w"> </span><span class="nv">ky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">kicked</span><span class="p">:</span><span class="nf">getPosition</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">self</span><span class="p">.</span><span class="py">owner</span><span class="p">:</span><span class="nf">getPosition</span><span class="p">()):</span><span class="nf">decompose</span><span class="p">()</span>
 
-   <span class="c1">-- &#39;normalize&#39; the kick direction</span>
-   <span class="kr">if</span> <span class="n">kx</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="kr">then</span> <span class="n">kx</span> <span class="o">=</span> <span class="mi">1</span> <span class="kr">elseif</span> <span class="n">kx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="kr">then</span> <span class="n">kx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="kr">end</span>
-   <span class="kr">if</span> <span class="n">ky</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="kr">then</span> <span class="n">ky</span> <span class="o">=</span> <span class="mi">1</span> <span class="kr">elseif</span> <span class="n">ky</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="kr">then</span> <span class="n">ky</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="kr">end</span>
+<span class="w">   </span><span class="c1">-- &#39;normalize&#39; the kick direction</span>
+<span class="w">   </span><span class="kr">if</span><span class="w"> </span><span class="nv">kx</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="nv">kx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">kx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="nv">kx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="kr">end</span>
+<span class="w">   </span><span class="kr">if</span><span class="w"> </span><span class="nv">ky</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="nv">ky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">ky</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="nv">ky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="kr">end</span>
 
-   <span class="c1">-- recompose back into a vector</span>
-   <span class="kd">local</span> <span class="n">kickdir</span> <span class="o">=</span> <span class="n">prism</span><span class="p">.</span><span class="n">Vector2</span><span class="p">(</span><span class="n">kx</span><span class="p">,</span> <span class="n">ky</span><span class="p">)</span>
+<span class="w">   </span><span class="c1">-- recompose back into a vector</span>
+<span class="w">   </span><span class="kd">local</span><span class="w"> </span><span class="nv">kickdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="nf">Vector2</span><span class="p">(</span><span class="nv">kx</span><span class="p">,</span><span class="w"> </span><span class="nv">ky</span><span class="p">)</span>
 
-   <span class="c1">-- our movetype mask for the kick, we&#39;ll give them the &#39;fly&#39; movetype</span>
-   <span class="kd">local</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">prism</span><span class="p">.</span><span class="n">Collision</span><span class="p">.</span><span class="n">createBitmaskFromMovetypes</span><span class="p">{</span> <span class="s2">&quot;fly&quot;</span> <span class="p">}</span>
+<span class="w">   </span><span class="c1">-- our movetype mask for the kick, we&#39;ll give them the &#39;fly&#39; movetype</span>
+<span class="w">   </span><span class="kd">local</span><span class="w"> </span><span class="nv">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">prism</span><span class="p">.</span><span class="py">Collision</span><span class="p">.</span><span class="py">createBitmaskFromMovetypes</span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;fly&quot;</span><span class="w"> </span><span class="p">}</span>
 
-   <span class="c1">-- now we loop and continue to try to move the kicked in the direction</span>
-   <span class="c1">-- of the kick a number of tiles equal to the kicker&#39;s kick strength.</span>
-   <span class="kr">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kicker</span><span class="p">.</span><span class="n">strength</span> <span class="kr">do</span>
-      <span class="kd">local</span> <span class="n">nextpos</span> <span class="o">=</span> <span class="n">kicked</span><span class="p">:</span><span class="n">getPosition</span><span class="p">()</span> <span class="o">+</span> <span class="n">kickdir</span>
-      <span class="kr">if</span> <span class="n">level</span><span class="p">:</span><span class="n">getCellPassable</span><span class="p">(</span><span class="n">nextpos</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">nextpos</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span> <span class="kr">then</span>
-         <span class="n">level</span><span class="p">:</span><span class="n">moveActor</span><span class="p">(</span><span class="n">kicked</span><span class="p">,</span> <span class="n">nextpos</span><span class="p">)</span>
-      <span class="kr">end</span>
-   <span class="kr">end</span>
+<span class="w">   </span><span class="c1">-- now we loop and continue to try to move the kicked in the direction</span>
+<span class="w">   </span><span class="c1">-- of the kick a number of tiles equal to the kicker&#39;s kick strength.</span>
+<span class="w">   </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">kicker</span><span class="p">.</span><span class="py">strength</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">      </span><span class="kd">local</span><span class="w"> </span><span class="nv">nextpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">kicked</span><span class="p">:</span><span class="nf">getPosition</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">kickdir</span>
+<span class="w">      </span><span class="kr">if</span><span class="w"> </span><span class="nv">level</span><span class="p">:</span><span class="nf">getCellPassable</span><span class="p">(</span><span class="nv">nextpos</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">nextpos</span><span class="p">.</span><span class="py">y</span><span class="p">,</span><span class="w"> </span><span class="nv">mask</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">         </span><span class="nv">level</span><span class="p">:</span><span class="nf">moveActor</span><span class="p">(</span><span class="nv">kicked</span><span class="p">,</span><span class="w"> </span><span class="nv">nextpos</span><span class="p">)</span>
+<span class="w">      </span><span class="kr">end</span>
+<span class="w">   </span><span class="kr">end</span>
 <span class="kr">end</span>
 
-<span class="kr">return</span> <span class="n">Kick</span>
+<span class="kr">return</span><span class="w"> </span><span class="nv">Kick</span>
 </pre></div>
 </div>
 </section>
