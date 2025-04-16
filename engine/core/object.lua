@@ -67,7 +67,7 @@ function Object:__new(...) end
 
 --- Checks if o is in the inheritance chain of self.
 --- @param self any
---- @param o table The class to check.
+--- @param o any The class to check.
 --- @return boolean is True if o is in the inheritance chain of self, false otherwise.
 function Object:is(o)
    if self == o then return true end
@@ -118,7 +118,7 @@ function Object.serialize(object)
    local stack = {object}
    local nextId = 1
    local objectToId = {}
-   
+
    local result = {
       references = {},
       rootId = nil
@@ -149,9 +149,9 @@ function Object.serialize(object)
 
    -- Helper function to determine if a value is a SerializableObject
    local function isSerializableObject(value)
-      return type(value) == "table" and 
-             getmetatable(value) and 
-             value.is and 
+      return type(value) == "table" and
+             getmetatable(value) and
+             value.is and
              value:is(Object)
    end
 
@@ -174,7 +174,7 @@ function Object.serialize(object)
       local obj = table.remove(stack)
       if not visited[obj] then
          visited[obj] = true
-         
+
          local objData = {
             id = getObjectId(obj),
             entries = {},
@@ -223,7 +223,7 @@ function Object.deserialize(data)
    assert(type(data) == "table", "Deserialization data must be a table")
    assert(data.rootId, "Deserialization data must have a rootId")
    assert(data.references, "Deserialization data must have a references table")
-   
+
    local idToObject = {}
 
    -- Forward declare all objects first

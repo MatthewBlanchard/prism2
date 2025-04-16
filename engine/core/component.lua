@@ -22,8 +22,8 @@ function Component:initialize(owner) end
 function Component:checkRequirements(actor)
    local foundreqs = {}
 
-   for k, component in pairs(actor.components) do
-      for k, req in pairs(self.requirements) do
+   for _, component in pairs(actor.components) do
+      for _, req in pairs(self.requirements) do
          if component:is(req) then table.insert(foundreqs, component) end
       end
    end

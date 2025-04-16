@@ -190,7 +190,7 @@ function MapBuilder:build()
    -- Create a new Map and populate it with the sparse grid data
    local map = prism.Map(width, height, self.initialValue)
 
-   for x, y, value in self:each() do
+   for x, y, _ in self:each() do
       map:set(x - minX + 1, y - minY + 1, self:get(x, y)())
    end
 

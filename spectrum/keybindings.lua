@@ -12,7 +12,7 @@ function Keybinding:__new(schema)
    for _, entry in ipairs(schema) do
       assert(type(entry.key) == "string", "Schema entry must include a 'key' field of type string.")
       assert(type(entry.action) == "string", "Schema entry must include an 'action' field of type string.")
-      assert(entry.description == nil or type(entry.description) == "string", 
+      assert(entry.description == nil or type(entry.description) == "string",
              "Description must be a string or nil.")
 
       local mode = entry.mode or "default"

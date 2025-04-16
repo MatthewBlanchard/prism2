@@ -5,6 +5,7 @@ local bit = require "bit"
 
 --- A class representing a 2D bitmask buffer using 16-bit integers.
 --- @class BitmaskBuffer : Object
+--- @overload fun(w: integer, h: integer): BitmaskBuffer
 local BitmaskBuffer = prism.Object:extend("BitmaskBuffer")
 
 --- Constructor for the BitmaskBuffer class.

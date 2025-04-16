@@ -331,7 +331,7 @@ function Level:getCell(x, y) return self.map:get(x, y) end
 --- @param x integer The x component to check if in bounds.
 ---@param y integer
 function Level:inBounds(x, y)
-   return 
+   return
       x > 0 and x <= self.map.w and
       y > 0 and y <= self.map.h
 end
@@ -376,7 +376,6 @@ end
 function Level:updatePassabilityCache(x, y)
    local mask = self.map.passableCache:getMask(x, y)
 
-   local passable = true
    for actor, _ in self.actorStorage:eachActorAt(x, y) do
       local collider = actor:getComponent(prism.components.Collider)
       if collider then
@@ -460,10 +459,8 @@ end
 --- @return table? actors
 --- @return table? fov A list of actors within the given range.
 function Level:getAOE(type, position, range)
-   assert(position:is(prism.Vector2))
+   assert(position:is(prism.Vector2), "Position was not a Vector2!")
    local seenActors = {}
-
-   local a = prism.Vector2(1, 1)
 
    if type == "fov" then
       local fov = prism.SparseGrid()
@@ -499,7 +496,7 @@ function Level:onDeserialize()
    local w, h = self.map.w, self.map.h
    self.opacityCache = prism.BooleanBuffer(w, h)
    self.passableCache = prism.BitmaskBuffer(w, h)
-   
+
    self.map:onDeserialize()
    for x, y, _ in self.map:each() do
       self:updateCaches(x, y)

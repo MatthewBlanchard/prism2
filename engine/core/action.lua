@@ -38,7 +38,7 @@ function Action:__new(owner, targets, source)
       .. " got "
       .. #self.targetObjects
    )
-   
+
    for i, target in ipairs(self.targets) do
       assert(
          target:_validate(owner, self.targetObjects[i], self.targetObjects),
@@ -55,7 +55,7 @@ end
 function Action:canPerform(level)
    if not self:hasRequisiteComponents(self.owner) then return false end
 
-   return self:_canPerform(level, unpack(self.targetObjects)) 
+   return self:_canPerform(level, unpack(self.targetObjects))
 end
 
 --- This method should be overriden by subclasses. This is called to make
@@ -69,6 +69,8 @@ end
 --- @param actor Actor
 --- @return boolean hasRequisiteComponents
 function Action:hasRequisiteComponents(actor)
+   if not self.requiredComponents then return true end
+
    for _, component in pairs(self.requiredComponents) do
       if not actor:hasComponent(component) then return false end
    end

@@ -24,7 +24,7 @@ function Actor:__new()
    self.components = {}
    self.componentCache = {}
    if components then
-      for k, component in ipairs(components) do
+      for _, component in ipairs(components) do
          component.owner = self
          self:__addComponent(component)
       end
@@ -50,14 +50,12 @@ function Actor:__addComponent(component)
    assert(component:checkRequirements(self), "Unsupported component " .. component.className .. " added to actor!")
    assert(not self:hasComponent(component), "Actor already has component " .. component.className .. "!")
 
-
    for _, v in pairs(prism.components) do
       if component:is(v) then
          if self.componentCache[v] then error("Actor already has component " .. v.className .. "!") end
          self.componentCache[v] = component
       end
    end
-
 
    component.owner = self
    table.insert(self.components, component)
@@ -70,7 +68,7 @@ end
 function Actor:__removeComponent(component)
    assert(component:is(prism.Component), "Expected argument component to be of type Component!")
 
-   for k, componentPrototype in pairs(prism.components) do
+   for _, componentPrototype in pairs(prism.components) do
       if component:is(componentPrototype) then
          if not self.componentCache[componentPrototype] then
             error("Actor does not have component " .. componentPrototype.name .. "!")
@@ -111,7 +109,7 @@ function Actor:getComponent(prototype) return self.componentCache[prototype] end
 --- @generic T
 --- @param prototype T The type of the component to return.
 --- @return T
-function Actor:expectComponent(prototype) 
+function Actor:expectComponent(prototype)
    return self.componentCache[prototype] or error("Expected component " .. prototype.className .. "!")
 end
 --

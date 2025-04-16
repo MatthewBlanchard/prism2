@@ -1,5 +1,3 @@
-local SensesComponent = prism.components.Senses
-
 --- @class SensesSystem : System
 local SensesSystem = prism.System:extend("SensesSystem")
 SensesSystem.name = "Senses"
@@ -14,7 +12,7 @@ function SensesSystem:onTurn(level, actor)
 end
 
 function SensesSystem:postInitialize(level)
-   for actor, senses in level:eachActor(prism.components.Senses) do
+   for actor, _ in level:eachActor(prism.components.Senses) do
       self:triggerRebuild(level, actor)
    end
 end

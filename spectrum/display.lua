@@ -178,6 +178,9 @@ function Display:drawActor(actor, alpha, color, drawnSet, x, y)
    end
 
    local drawable = actor:getComponent(prism.components.Drawable)
+   if not drawable then return end
+   ---@cast drawable DrawableComponent
+
    local position = actor:getPosition()
    x, y = x or position.x, y or position.y
    Display.drawDrawable(drawable, self.spriteAtlas, self.cellSize, x, y, color, alpha)
@@ -230,6 +233,11 @@ function Display.drawDrawable(drawable, spriteAtlas, cellSize, x, y, color, alph
    color = color or drawable.color
    local r, g, b, a = color:decompose()
    local cSx, cSy = cellSize.x, cellSize.y
+
+   if drawable.background then
+      love.graphics.setColor(drawable.background:decompose())
+      love.graphics.rectangle("fill", x * cSx, y * cSy, cSx, cSy)
+   end
 
    love.graphics.setColor(r, g, b, a * alpha)
    love.graphics.draw(spriteAtlas.image, quad, x * cSx, y * cSy)

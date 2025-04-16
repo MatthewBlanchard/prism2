@@ -69,7 +69,7 @@ function Collision.assignNextAvailableMovetype(name)
    if Collision.registeredMovetypes[name] then
       error("movetypes name already registered: " .. name)
    end
-   
+
    for _, bitmask in pairs(Collision.MOVETYPES) do
       if not Collision.movetypeNames[bitmask] then
          Collision.registeredMovetypes[name] = bitmask
@@ -77,7 +77,7 @@ function Collision.assignNextAvailableMovetype(name)
          return bitmask
       end
    end
-   
+
    error("No available collision movetypes remaining.")
 end
 
